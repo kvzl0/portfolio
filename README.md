@@ -41,7 +41,7 @@ The page still works without JavaScript or WebGL: all text stays visible and the
 ## Hackathons
 
 - **AppBuildersPH Hackathon 2026** (Oct 2026) - Participant. Backpack Tutor, an offline on-device AI study app
-- **Build Over Nights: Kiro x Quick** (Oct 2026) - Qualified for the Educational Crisis track. TU-gang, a Bikol-first tutor app
+- **Build Over Nights: Kiro x Quick** (Oct 2026) - Top 10, Educational Crisis track (selected from hundreds of applicant teams). TU-gang, a Bikol-first tutor app
 - **UI/UX HAWK-A-THON** (Mar 2025) - Participant. UniFit, a gender-neutral fitness app designed in Figma
 
 ## Contact
