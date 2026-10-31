@@ -105,4 +105,42 @@
       }
     });
   }
+
+  // Certificate preview: certificate links open an image in a dialog
+  // instead of a new tab. Without JavaScript (or <dialog> support) the
+  // links still open the PDF.
+  var cert = document.querySelector("dialog.cert");
+  if (cert && typeof cert.showModal === "function") {
+    var certImg = cert.querySelector(".cert__img");
+    var certTitle = cert.querySelector(".cert__title");
+    var certPdf = cert.querySelector("[data-cert-pdf]");
+    var opener = null;
+
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest("a[data-cert]");
+      // Let ctrl/cmd/shift/middle clicks open the PDF as usual
+      if (!link || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      opener = link;
+      var title = link.getAttribute("data-cert-title") || "Certificate";
+      certImg.src = link.getAttribute("data-cert");
+      certImg.alt = title;
+      certTitle.textContent = title;
+      certPdf.href = link.getAttribute("href");
+      document.documentElement.classList.add("has-dialog");
+      cert.showModal();
+    });
+
+    cert.querySelector("[data-cert-close]").addEventListener("click", function () {
+      cert.close();
+    });
+    // Clicking the dark area around the certificate closes it
+    cert.addEventListener("click", function (e) {
+      if (e.target === cert) cert.close();
+    });
+    cert.addEventListener("close", function () {
+      document.documentElement.classList.remove("has-dialog");
+      if (opener) opener.focus();
+    });
+  }
 })();

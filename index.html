@@ -8,6 +8,29 @@
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <title>Kiev Gonzales | Cloud Engineering Portfolio</title>
+  <link rel="canonical" href="https://kievgonzales.is-a.dev/">
+
+  <!-- Link previews (Facebook, LinkedIn, Messenger, Discord, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kievgonzales.is-a.dev/">
+  <meta property="og:title" content="Kiev Gonzales | Cloud Engineering Portfolio">
+  <meta property="og:description" content="BSIT student at TUP Manila focused on cloud engineering. Projects, freelance work, and hackathons.">
+  <meta property="og:image" content="https://kievgonzales.is-a.dev/assets/icons/apple-touch-icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Tells search engines who this site is about -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kiev Gonzales",
+      "url": "https://kievgonzales.is-a.dev/",
+      "email": "mailto:cauyan.kiev13@gmail.com",
+      "jobTitle": "BSIT Student, Cloud Engineering",
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Technological University of the Philippines - Manila" },
+      "sameAs": ["https://github.com/kvzl0", "https://www.linkedin.com/in/kiev-gonzales/"]
+    }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,7 +169,7 @@
                 </blockquote>
                 <div class="record__links">
                   <a class="ghost kicker" href="https://www.mpa-popularity.site/vote" target="_blank" rel="noopener noreferrer">Live site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a>
-                  <a class="ghost kicker" href="assets/certificates/pasc-2026.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-award" aria-hidden="true"></i> Certificate<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+                  <a class="ghost kicker" href="assets/certificates/pasc-2026.pdf" target="_blank" rel="noopener noreferrer" data-cert="assets/certificates/pasc-2026.webp" data-cert-title="Certificate of Appreciation, PASC Inc., 2026"><i class="fa-solid fa-award" aria-hidden="true"></i> Certificate<span class="sr-only"> (PDF)</span></a>
                 </div>
               </div>
             </details>
@@ -285,7 +308,7 @@
                 <p class="record__note">24-hour build, Oct 9&ndash;10, 2026 · 281 projects from 731 builders · Demo Day at Cyberzone, SM Makati</p>
                 <div class="record__links">
                   <a class="ghost kicker" href="https://github.com/jjoshua-sek/AppBuildersPH" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Code<span class="sr-only"> (opens in a new tab)</span></a>
-                  <a class="ghost kicker" href="assets/certificates/appbuildersph-2026.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-award" aria-hidden="true"></i> Certificate<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+                  <a class="ghost kicker" href="assets/certificates/appbuildersph-2026.pdf" target="_blank" rel="noopener noreferrer" data-cert="assets/certificates/appbuildersph-2026.webp" data-cert-title="Certificate of Participation, AppBuildersPH Hackathon 2026"><i class="fa-solid fa-award" aria-hidden="true"></i> Certificate<span class="sr-only"> (PDF)</span></a>
                   <a class="ghost kicker" href="https://appbuildersph.com/hackathon/projects/#ok-computer" target="_blank" rel="noopener noreferrer">Project page <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a>
                 </div>
               </div>
@@ -328,7 +351,7 @@
                 <p class="record__note">Mar 19&ndash;20, 2025 · 24-hour design sprint</p>
                 <div class="record__links">
                   <a class="ghost kicker" href="https://www.figma.com/design/kCmdaGaNNUTfQOVbAx92Xd/UniFit?node-id=0-1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-figma" aria-hidden="true"></i> Figma<span class="sr-only"> (opens in a new tab)</span></a>
-                  <a class="ghost kicker" href="assets/certificates/hawk-a-thon-2025.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-award" aria-hidden="true"></i> Certificate<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+                  <a class="ghost kicker" href="assets/certificates/hawk-a-thon-2025.pdf" target="_blank" rel="noopener noreferrer" data-cert="assets/certificates/hawk-a-thon-2025.webp" data-cert-title="Certificate of Participation, UI/UX HAWK-A-THON 2025"><i class="fa-solid fa-award" aria-hidden="true"></i> Certificate<span class="sr-only"> (PDF)</span></a>
                 </div>
               </div>
             </details>
@@ -364,5 +387,16 @@
       <a class="kicker footer__top" href="#opening">Back to the top ↑</a>
     </div>
   </footer>
+  <!-- Certificate preview (opened by main.js; links fall back to the PDF without JavaScript) -->
+  <dialog class="cert" aria-labelledby="cert-title">
+    <div class="cert__bar">
+      <p id="cert-title" class="kicker cert__title"></p>
+      <div class="cert__actions">
+        <a class="ghost kicker" data-cert-pdf href="#" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> PDF<span class="sr-only"> (opens in a new tab)</span></a>
+        <button type="button" class="ghost kicker cert__close" data-cert-close aria-label="Close certificate"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <img class="cert__img" alt="" width="1600" height="1132">
+  </dialog>
 </body>
 </html>

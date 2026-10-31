@@ -27,6 +27,16 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Hide the scrollbar; the page still scrolls with wheel, touch, and keys */
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Stop the page scrolling behind the certificate preview */
+html.has-dialog {
+  overflow: hidden;
 }
 
 body {
@@ -177,10 +187,31 @@ body::after {
   color: var(--bone);
 }
 
+/* Scroll cue: a faint track with a bright line that draws down,
+   then retracts from the top, on a loop */
 .cue {
+  position: relative;
   margin-top: 3.5rem;
   padding: 0.6rem 0 0.6rem 1rem;
-  border-left: 1px solid var(--bone);
+  border-left: 1px solid var(--line);
+}
+.cue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  width: 1px;
+  background: var(--bone);
+  transform-origin: top;
+  animation: cue-line 2.2s var(--ease-out-expo) infinite;
+}
+
+@keyframes cue-line {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  45%  { transform: scaleY(1); transform-origin: top; }
+  55%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
 /* ===== Masthead ===== */
@@ -561,6 +592,73 @@ body::after {
   margin-top: 1.5rem;
 }
 
+/* ===== Certificate preview ===== */
+.cert {
+  margin: auto;
+  /* Never wider than what fits on screen at the certificate's aspect ratio
+     (about 1.41:1, below a ~4rem title bar) */
+  width: min(64rem, calc(100vw - 2rem), calc((100dvh - 6.5rem) * 1.41));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--noir);
+  color: var(--bone);
+  overflow: hidden;
+}
+.cert[open] {
+  display: flex;
+  flex-direction: column;
+  animation: cert-in 0.45s var(--ease-out-expo);
+}
+.cert::backdrop {
+  background: rgba(3, 3, 3, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.cert__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+.cert__title {
+  font-size: 0.75rem;
+  color: var(--ash);
+}
+.cert__actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.5rem;
+}
+.cert__actions .ghost {
+  min-height: 2.5rem;
+  font-size: 0.75rem;
+}
+.cert__close {
+  width: 2.5rem;
+  justify-content: center;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.cert__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  background: var(--bone);
+}
+
+@keyframes cert-in {
+  from { opacity: 0; transform: translateY(1rem) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
 /* ===== Footer ===== */
 .footer {
   position: relative;
@@ -652,6 +750,18 @@ body::after {
     margin-top: 2rem;
   }
 
+  .cert {
+    width: calc(100vw - 1.5rem);
+    border-radius: 0.75rem;
+  }
+  .cert__bar {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+  }
+  .cert__title {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+  }
+
   .record summary {
     grid-template-columns: 1.75rem 4.75rem minmax(0, 1fr) 1rem;
     gap: 0.6rem;
@@ -687,6 +797,13 @@ body::after {
     transition: opacity 0.2s;
   }
   .record__body {
+    animation: none;
+  }
+  .cue::before {
+    animation: none;
+    transform: none;
+  }
+  .cert[open] {
     animation: none;
   }
 }
