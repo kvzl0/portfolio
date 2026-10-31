@@ -497,6 +497,23 @@ body::after {
   font-size: 1rem;
 }
 
+.record__quote {
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--teal);
+}
+.record__quote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: var(--bone);
+}
+.record__quote footer {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
 .record__links {
   display: flex;
   flex-wrap: wrap;

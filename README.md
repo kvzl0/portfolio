@@ -29,6 +29,7 @@ The page still works without JavaScript or WebGL: all text stays visible and the
 
 ## Projects Featured
 
+- **PASC Inc. Voting Site** (Freelance, Aug–Oct 2026) - Miss Popularity voting site for the 2026 Miss Philippines-Australia & Charity Queen Australia pageant, built with Jedrick Franconas in Next.js and Supabase. 2,332 votes across 9 candidates. [Live site](https://www.mpa-popularity.site/vote)
 - **Ajon-Veggies POS System** - Full-stack POS with Flask, SQLite, FIFO inventory, and role-based access control
 - **RBAC Log Management CLI** - Python/SQLite CLI tool for access log management with role-based permissions
 - **E-Commerce Application** - Full-stack platform built with Java and MySQL
