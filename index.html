@@ -2,152 +2,339 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kiev Gonzales - BSIT student focused on cloud engineering. Portfolio showcasing projects in AWS, Python, Flask, and more.">
-  <title>Kiev Gonzales | Portfolio</title>
-  <!-- Preconnect for faster font loading -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Kiev Gonzales - BSIT student at TUP Manila focused on cloud engineering. Projects, skills, and hackathons in AWS, Python, Flask, and more.">
+  <meta name="theme-color" content="#030303">
+  <title>Kiev Gonzales | Cloud Engineering Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="scene.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
+  <a class="skip" href="#seed">Skip to content</a>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <header>
-    <h1>Hello, I'm Kiev Gonzales</h1>
-    <p>BSIT student focused on cloud engineering — building scalable, secure, and practical solutions.</p>
+  <header class="masthead">
+    <a href="#opening" class="display masthead__logo" aria-label="Kiev, back to the top">KIEV<span class="dot">.</span></a>
+    <nav class="masthead__nav" aria-label="Main">
+      <a class="kicker masthead__link" href="#seed">About</a>
+      <a class="kicker masthead__link" href="#layer-cloud">Skills</a>
+      <a class="kicker masthead__link" href="#projects">Projects</a>
+      <a class="kicker masthead__link" href="#hackathons">Hackathons</a>
+      <a class="kicker pill" href="#contact">Let's deploy</a>
+    </nav>
   </header>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about">
-      <p>
-        I'm a <strong>BSIT student at Technological University of the Philippines &ndash; Manila</strong>,
-        graduating in 2027. My focus is on <strong>cloud engineering</strong>, with hands-on experience
-        designing and deploying cloud-based solutions on <em>AWS</em>.
-      </p>
-      <p>
-        My coursework spans <strong>networking</strong>, <strong>cybersecurity</strong>,
-        <strong>information assurance</strong>, and <strong>database systems</strong> &mdash;
-        giving me a well-rounded foundation for building secure and resilient systems.
-      </p>
-      <p>
-        I value continuous learning, clean architecture, and building things that actually work in production.
-      </p>
+  <main class="story">
+    <!-- Fixed 3D stage that sits behind every chapter -->
+    <div class="stage" aria-hidden="true">
+      <canvas class="stage__canvas"></canvas>
+      <div class="stage__scrim"></div>
+      <ol class="stage__rail">
+        <li class="stage__dot" data-active></li>
+        <li class="stage__dot"></li>
+        <li class="stage__dot"></li>
+        <li class="stage__dot"></li>
+        <li class="stage__dot"></li>
+        <li class="stage__dot"></li>
+        <li class="stage__dot"></li>
+        <li class="stage__dot"></li>
+        <li class="stage__dot"></li>
+      </ol>
+      <p class="stage__notation kicker" data-notation>01 · 127.0.0.1 · Localhost</p>
     </div>
-  </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill-card"><i class="fa-brands fa-aws fa-2x"></i><p>Cloud Computing (AWS)</p></div>
-      <div class="skill-card"><i class="fa-brands fa-python fa-2x"></i><p>Python / Flask</p></div>
-      <div class="skill-card"><i class="fa-solid fa-database fa-2x"></i><p>SQLite / PostgreSQL</p></div>
-      <div class="skill-card"><i class="fa-solid fa-network-wired fa-2x"></i><p>Networking &amp; Security</p></div>
-      <div class="skill-card"><i class="fa-solid fa-lock fa-2x"></i><p>Information Security</p></div>
-      <div class="skill-card"><i class="fa-brands fa-github fa-2x"></i><p>GitHub</p></div>
-      <div class="skill-card"><i class="fa-brands fa-html5 fa-2x"></i><p>HTML / CSS / JavaScript</p></div>
-      <div class="skill-card"><i class="fa-solid fa-code fa-2x"></i><p>C / C++</p></div>
-      <div class="skill-card"><i class="fa-brands fa-java fa-2x"></i><p>Java</p></div>
+    <!-- 0. Opening -->
+    <section id="opening" class="chapter chapter--opening" data-notation="01 · 127.0.0.1 · Localhost" data-active>
+      <div class="chapter__copy chapter__copy--wide">
+        <p class="kicker text-ash">Kiev Gonzales · BSIT, TUP Manila · Cloud Engineering</p>
+        <h1 class="headline headline--hero">
+          <span class="display">Built to scale,</span>
+          <span class="accent">secured.</span>
+        </h1>
+        <p class="cue kicker">Scroll to send the first packet</p>
+      </div>
+    </section>
+
+    <!-- 1. About, part one -->
+    <section id="seed" class="chapter" data-notation="02 · SYN · The packet">
+      <div class="chapter__copy">
+        <p class="kicker text-ash">I. The packet</p>
+        <h2 class="headline"><span class="display">Start at</span> <span class="accent">localhost.</span></h2>
+        <p class="lede">
+          I'm a BSIT student at the Technological University of the Philippines &ndash; Manila, graduating in 2027.
+          My focus is cloud engineering, with hands-on experience designing and deploying cloud-based solutions on AWS.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. About, part two -->
+    <section id="network" class="chapter" data-notation="03 · ACK · The network">
+      <div class="chapter__copy">
+        <p class="kicker text-ash">II. The network comes alive</p>
+        <h2 class="headline"><span class="display">Every node</span> <span class="accent">secured.</span></h2>
+        <p class="lede">
+          My coursework spans networking, cybersecurity, information assurance, and database systems.
+          I value continuous learning, clean architecture, and building things that actually work in production.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3-5. Skills, one layer per chapter -->
+    <section id="layer-cloud" class="chapter" data-notation="04 · L1 · Infrastructure">
+      <div class="chapter__copy">
+        <p class="kicker text-ash">Layer 01 · Infrastructure</p>
+        <h2 class="headline headline--word"><span class="display">Cloud</span></h2>
+        <p class="lede">Designing and deploying cloud-based solutions on AWS, backed by coursework in networking and information security.</p>
+        <p class="tags kicker">AWS · Networking &amp; Security · Information Security</p>
+      </div>
+    </section>
+
+    <section id="layer-backend" class="chapter" data-notation="05 · L2 · Backend &amp; data">
+      <div class="chapter__copy">
+        <p class="kicker text-ash">Layer 02 · Backend &amp; Data</p>
+        <h2 class="headline headline--word"><span class="display">Backend</span></h2>
+        <p class="lede">Full-stack apps in Python and Flask, data in SQLite and PostgreSQL, and every project versioned on GitHub.</p>
+        <p class="tags kicker">Python / Flask · SQLite / PostgreSQL · GitHub</p>
+      </div>
+    </section>
+
+    <section id="layer-code" class="chapter" data-notation="06 · L3 · Code">
+      <div class="chapter__copy">
+        <p class="kicker text-ash">Layer 03 · Languages</p>
+        <h2 class="headline headline--word"><span class="display">Code</span></h2>
+        <p class="lede">The languages behind the projects below, from C++ games and Java apps to the web.</p>
+        <p class="tags kicker">HTML / CSS / JavaScript · C / C++ · Java</p>
+      </div>
+    </section>
+
+    <!-- 6. Projects -->
+    <section id="projects" class="chapter chapter--long" data-notation="07 · 200 OK · Projects">
+      <div class="chapter__copy">
+        <p class="kicker text-ash">The build log · Projects</p>
+        <h2 class="headline"><span class="display">Shipped</span> <span class="accent">so far</span></h2>
+
+        <ol class="record">
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">1.</span>
+                <span class="record__meta reading">Flask</span>
+                <span class="record__title"><strong>Ajon-Veggies POS System</strong><span class="text-ash"> · Python, SQLite</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p>A full-stack point-of-sale system for a vegetable distribution business. Features FIFO inventory tracking, role-based access control for Owner and Cashier roles, financial reporting with CSV export, and a dark mode interface.</p>
+                <div class="record__links">
+                  <a class="ghost kicker" href="https://github.com/kvzl0/Ajon-Veggies" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Code<span class="sr-only"> (opens in a new tab)</span></a>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">2.</span>
+                <span class="record__meta reading">Python</span>
+                <span class="record__title"><strong>RBAC Log Management CLI</strong><span class="text-ash"> · SQLite</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p>A command-line tool that manages access logs with role-based permissions, applying core access control principles (RBAC and audit logging) to a practical, terminal-based system.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">3.</span>
+                <span class="record__meta reading">Java</span>
+                <span class="record__title"><strong>E-Commerce Application</strong><span class="text-ash"> · MySQL</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p>A full-stack e-commerce platform covering product listings, cart management, and order processing.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">4.</span>
+                <span class="record__meta reading">ESP32</span>
+                <span class="record__title"><strong>IoT Environmental Monitor</strong><span class="text-ash"> · Arduino, Blynk</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p>An IoT project using Arduino/ESP32 and the Blynk platform to collect and display environmental sensor data in real time.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">5.</span>
+                <span class="record__meta reading">C++</span>
+                <span class="record__title"><strong>ATM Simulation</strong><span class="text-ash"> · File handling</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p>An interactive banking simulation with registration, login, and transactions using file handling.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">6.</span>
+                <span class="record__meta reading">C++</span>
+                <span class="record__title"><strong>Snake Game</strong><span class="text-ash"> · Graphics</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p>A classic arcade game implemented with graphics programming techniques.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">7.</span>
+                <span class="record__meta reading">Figma</span>
+                <span class="record__title"><strong>UI/UX App Simulation</strong><span class="text-ash"> · Prototype</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p>A fully interactive app prototype, focusing on usability and modern design principles.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">8.</span>
+                <span class="record__meta reading">HTML/CSS</span>
+                <span class="record__title"><strong>E-commerce Website</strong><span class="text-ash"> · Intro to Computing</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p>An e-commerce website built as part of an Introduction to Computing project.</p>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. Hackathons -->
+    <section id="hackathons" class="chapter chapter--long" data-notation="08 · 3 runs · Hackathons">
+      <div class="chapter__copy">
+        <p class="kicker text-ash">III. Under pressure · Hackathons</p>
+        <h2 class="headline"><span class="display">Built</span> <span class="accent">overnight</span></h2>
+
+        <ol class="record record--hack">
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">1.</span>
+                <span class="record__meta reading"><time datetime="2026-10">Oct 2026</time></span>
+                <span class="record__title"><strong>AppBuildersPH Hackathon 2026</strong><span class="text-ash"> · Participant</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p class="record__project"><strong>Backpack Tutor</strong> <span class="text-ash">· Team OK Computer, 4 members</span></p>
+                <p>An offline study app for Filipino students. It turns photos of printed handouts into word games and runs a Socratic tutor that guides without giving the answer away. All of the AI (Gemma 3 1B, embeddings, and OCR) runs on a budget Android phone with no internet.</p>
+                <p><span class="text-bone">My part:</span> the tutor lane. I built the leak guard and its tests, the tutor prompt, and the 50-attempt leak gate that checks the tutor never reveals the answer. I also handled on-device builds and wrote the README and disclosures.</p>
+                <p class="tags kicker">React Native · TypeScript · llama.rn · Gemma 3 1B · ML Kit</p>
+                <p class="record__note">24-hour build, Oct 9&ndash;10, 2026 · 281 projects from 731 builders · Demo Day at Cyberzone, SM Makati</p>
+                <div class="record__links">
+                  <a class="ghost kicker" href="https://github.com/jjoshua-sek/AppBuildersPH" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Code<span class="sr-only"> (opens in a new tab)</span></a>
+                  <a class="ghost kicker" href="assets/certificates/appbuildersph-2026.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-award" aria-hidden="true"></i> Certificate<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+                  <a class="ghost kicker" href="https://appbuildersph.com/hackathon/projects/#ok-computer" target="_blank" rel="noopener noreferrer">Project page <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">2.</span>
+                <span class="record__meta reading"><time datetime="2026-10">Oct 2026</time></span>
+                <span class="record__title"><strong>Build Over Nights: Kiro x Quick</strong><span class="text-ash"> · Top 10, Educational Crisis track</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p class="record__project"><strong>TU-gang</strong> <span class="text-ash">· Team Joshua and Friends</span></p>
+                <p>A Bikol-first tutor app for students. A student asks a school question by voice, text, or an NFC learning card and gets a concept-first answer in Bikol with an example and key points.</p>
+                <p><span class="text-bone">My part:</span> backend, Supabase, and Agora, built with Kiro. I set up Supabase retrieval with pgvector (schema, retrieval function, and embedding Edge Functions), built the Express server with Agora voice endpoints, forwarded <code>/api/explain</code> to the tutor, and added health checks. I also compiled 866 DepEd Term 1 learning competencies for Grades 1&ndash;9.</p>
+                <p class="tags kicker">TypeScript · Express · Supabase · pgvector · Agora · Kiro</p>
+                <p class="record__note">Oct 3&ndash;4, 2026 · ArthaLand Century Pacific Tower · selected from hundreds of applicant teams · 36 teams accepted across 4 tracks, 10 per track</p>
+                <div class="record__links">
+                  <a class="ghost kicker" href="https://github.com/def-jedd/TU-gang" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Code<span class="sr-only"> (opens in a new tab)</span></a>
+                  <a class="ghost kicker" href="https://buildovernights.com/results" target="_blank" rel="noopener noreferrer">Results <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <span class="record__num accent">3.</span>
+                <span class="record__meta reading"><time datetime="2025-03">Mar 2025</time></span>
+                <span class="record__title"><strong>UI/UX HAWK-A-THON</strong><span class="text-ash"> · Participant</span></span>
+                <span class="record__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="record__body">
+                <p class="record__project"><strong>UniFit</strong> <span class="text-ash">· Team OK/Computer, 5 members</span></p>
+                <p>A gender-neutral health and fitness app that gives everyone, especially the LGBTQ+ community, a safe space to train. It covers personalized workouts, mental well-being, and community support. Designed in Figma in 24 hours.</p>
+                <p><span class="text-bone">My part:</span> UI/UX Designer. I rapid-prototyped the app's interactive design layout under strict time limits, and worked with the team to map out user flows and deliver a user-centered prototype. It was our first hackathon and our first time working in Figma.</p>
+                <p class="tags kicker">Figma · UI/UX · Prototyping</p>
+                <p class="record__note">Mar 19&ndash;20, 2025 · 24-hour design sprint</p>
+                <div class="record__links">
+                  <a class="ghost kicker" href="https://www.figma.com/design/kCmdaGaNNUTfQOVbAx92Xd/UniFit?node-id=0-1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-figma" aria-hidden="true"></i> Figma<span class="sr-only"> (opens in a new tab)</span></a>
+                  <a class="ghost kicker" href="assets/certificates/hawk-a-thon-2025.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-award" aria-hidden="true"></i> Certificate<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+                </div>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 8. Contact -->
+    <section id="contact" class="chapter chapter--last" data-notation="09 · 443 · Let's deploy">
+      <div class="chapter__copy">
+        <p class="kicker text-ash">The last hop · Contact</p>
+        <h2 class="headline"><span class="display">Let's</span> <span class="accent">deploy.</span></h2>
+        <p class="lede">Open to opportunities and collaborations. Let's connect.</p>
+        <a class="mail display" href="mailto:cauyan.kiev13@gmail.com">cauyan.kiev13@gmail.com</a>
+        <div class="contact__actions">
+          <button type="button" class="ghost kicker" data-copy="cauyan.kiev13@gmail.com">
+            <i class="fa-regular fa-copy" aria-hidden="true"></i> <span data-copy-label>Copy</span>
+          </button>
+        </div>
+        <div class="contact__social">
+          <a class="pill pill--social" href="https://github.com/kvzl0" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="pill pill--social" href="https://www.linkedin.com/in/kiev-gonzales/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="display footer__mark" aria-hidden="true">KIEV<span class="dot">.</span></p>
+    <div class="footer__meta">
+      <p class="kicker">&copy; 2026 Kiev Gonzales</p>
+      <a class="kicker footer__top" href="#opening">Back to the top ↑</a>
     </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-
-      <div class="project-card">
-        <div>
-          <h3>Ajon-Veggies POS System</h3>
-          <p>A full-stack point-of-sale system for a vegetable distribution business, built with Flask and SQLite. Features FIFO inventory tracking, role-based access control for Owner and Cashier roles, financial reporting with CSV export, and a dark mode interface.</p>
-        </div>
-        <a href="https://github.com/kvzl0/Ajon-Veggies" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <div>
-          <h3>RBAC Log Management CLI</h3>
-          <p>A command-line tool built in Python and SQLite that manages access logs with role-based permissions, applying core access control principles &mdash; RBAC and audit logging &mdash; to a practical, terminal-based system.</p>
-        </div>
-        <a href="#" class="btn">Read More</a>
-      </div>
-
-      <div class="project-card">
-        <div>
-          <h3>E-Commerce Application</h3>
-          <p>A full-stack e-commerce platform built with Java and MySQL, covering product listings, cart management, and order processing.</p>
-        </div>
-        <a href="#" class="btn">Read More</a>
-      </div>
-
-      <div class="project-card">
-        <div>
-          <h3>IoT Environmental Monitor</h3>
-          <p>An IoT project using Arduino/ESP32 and the Blynk platform to collect and display environmental sensor data in real time.</p>
-        </div>
-        <a href="#" class="btn">Read More</a>
-      </div>
-
-      <div class="project-card">
-        <div>
-          <h3>ATM Simulation</h3>
-          <p>Developed an interactive banking simulation using C++ with features like registration, login, and transactions using file handling.</p>
-        </div>
-        <a href="#" class="btn">Read More</a>
-      </div>
-
-      <div class="project-card">
-        <div>
-          <h3>Snake Game</h3>
-          <p>Implemented a classic arcade game in C++ using graphics programming techniques.</p>
-        </div>
-        <a href="#" class="btn">Read More</a>
-      </div>
-
-      <div class="project-card">
-        <div>
-          <h3>UI/UX App Simulation</h3>
-          <p>Designed a fully interactive app prototype using Figma, focusing on usability and modern design principles.</p>
-        </div>
-        <a href="#" class="btn">Read More</a>
-      </div>
-
-      <div class="project-card">
-        <div>
-          <h3>E-commerce Website</h3>
-          <p>Developed an e-commerce website using HTML and CSS as part of an Introduction to Computing project.</p>
-        </div>
-        <a href="#" class="btn">Read More</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center; margin-bottom:1rem;">Let's connect!</p>
-    <div class="contact">
-      <a href="mailto:cauyan.kiev13@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://github.com/kvzl0" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/kiev-gonzales/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Kiev Gonzales. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
